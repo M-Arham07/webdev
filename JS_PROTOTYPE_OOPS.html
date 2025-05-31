@@ -1,0 +1,37 @@
+
+<script>
+ // PROTOTYPE OOPs
+  function amd(model,cores,threads,frequency,igpu,tmax){
+
+    this.model=model;
+    this.cores=cores;
+    this.threads=threads;
+    this.frequency=frequency;
+    this.igpu=igpu;
+    this.tmax=tmax;
+  
+
+    // METHODS //
+
+  this.checkSpecs=() =>document.write(`
+
+    Model: ${this.model} <br>
+       Cores: ${this.cores} <br>
+       Threads: ${this.threads} <br>
+       Frequency: ${this.frequency} <br>
+       iGPU: ${this.igpu} <br>
+       Temp Threshold: ${this.tmax}<br>
+  
+  `)
+
+  }
+
+  const myprocesor= new amd("Ryzen 5 5600X",6,12,3.7,"Radeon Graphics",95);
+  amd.prototype.generation="5th";
+  amd.prototype.showGen = function(){
+    document.write(`Generation: ${this.generation}`);
+  }
+  myprocesor.checkSpecs(); 
+  myprocesor.showGen();
+
+   </script>
