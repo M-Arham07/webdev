@@ -1,0 +1,59 @@
+
+
+<script>
+    class laptop{
+        constructor(cpu,gpu){
+            this.processor=cpu;
+            this.graphic_card=gpu;
+
+        }
+
+        processor_info(){
+            return this.processor;
+        }
+        gpu_info(){
+            return this.graphic_card;
+        }
+
+
+    }
+
+    const lap=new laptop("i5 8th Gen", "RX 5700xt" );
+    // console.log(lap.graphic_card) DIRECT ACCESS (NOT RECCOMENDED
+    
+
+    console.log(lap.gpu_info(),"\n",lap.processor_info())
+
+
+
+    class intel{
+        constructor(model,cores,threads,frequency,igpu,tmax){
+            this.model=model;
+            this.cores=cores;
+            this.threads=threads;
+            this.frequency=frequency;
+            this.igpu=igpu;
+            this.tmax=tmax;
+        }
+
+       check_performance(){
+
+        if(this.cores>2 && this.threads>4)
+        console.log("good performance")
+    else if(this.cores<2 || this.threads<4)
+    console.log("poor performance");
+       }
+
+
+
+       check_specs(){
+        
+       }
+    }
+   
+
+
+
+
+</script>
+
