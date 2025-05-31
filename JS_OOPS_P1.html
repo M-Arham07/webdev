@@ -38,19 +38,37 @@
 
        check_performance(){
 
-        if(this.cores>2 && this.threads>4)
+        if(this.cores>=4 && this.threads>=4)
         console.log("good performance")
-    else if(this.cores<2 || this.threads<4)
+    else if(this.cores<4 || this.threads<4)
     console.log("poor performance");
        }
 
 
 
        check_specs(){
+        document.write(`
+
+       Model: ${this.model} <br>
+       Cores: ${this.cores} <br>
+       Threads: ${this.threads} <br>
+       Frequency: ${this.frequency} <br>
+       iGPU: ${this.igpu} <br>
+       Temp Threshold: ${this.tmax}<br>
+
+
+        `);
         
        }
     }
+
+
+    const myprocessor=new intel("i3",4,4,1.67,"Intel HD 4000", 110);
+    myprocessor.check_performance();
+    myprocessor.check_specs();
    
+
+    
 
 
 
